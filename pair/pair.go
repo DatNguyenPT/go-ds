@@ -6,6 +6,11 @@ type Pair struct {
 	a, b any // No need for pointers
 }
 
+// NewPair creates and returns a new Pair with the given values.
+func NewPair(a, b any) Pair {
+	return Pair{a: a, b: b}
+}
+
 // GetFirst returns the first value if present, otherwise an error.
 func (pair *Pair) GetFirst() (any, error) {
 	if pair.a != nil {
